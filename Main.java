@@ -6,33 +6,33 @@ import java.util.Scanner;
 public class Main {
 
     static Random dice = new Random();
-    static int liczbakrolikow = 0;
-    static int liczbaowiec = 0;
-    static int liczbaswin = 0;
-    static int liczbakrow = 0;
-    static int liczbakoni = 0;
-    static int liczbamalychpsow = 0;
-    static int liczbaduzychpsow = 0;
-    static int wynikzoltej = 0;
-    static int wynikczerwonej = 0;
-    static int liczbarzutow = 0;
+    static int liczbaKrolikow = 0;
+    static int liczbaOwiec = 0;
+    static int liczbaSwin = 0;
+    static int liczbaKrow = 0;
+    static int liczbaKoni = 0;
+    static int liczbaMalychPsow = 0;
+    static int liczbaDuzychPsow = 0;
+    static int wynikZoltej = 0;
+    static int wynikCzerwonej = 0;
+    static int liczbaRzutow = 0;
     static String zolta;
     static String czerwona;
-    static int nagrodakrolik = 0;
-    static int nagrodaowca = 0;
-    static int nagrodaswinia = 0;
-    static int nagrodakrowa = 0;
-    static int nagrodakon = 0;
+    static int nagrodaKrolik = 0;
+    static int nagrodaOwca = 0;
+    static int nagrodaSwinia = 0;
+    static int nagrodaKrowa = 0;
+    static int nagrodaKon = 0;
 
     public static void main(String[] args){
 
         System.out.println("Witaj w tej cudownej grze kolego. Celem gry jest zdobycie conajmniej 1 królika, 1 owcy, 1 świni, 1 krowy oraz 1 konia.");
         System.out.println("Przeszkodzić Ci w tym mogą grasujące w okolicy wilki i lisy.");
         System.out.println("Przeciwko lisowi obronić Cię może mały pies, przeciwko wilkowi duży pies.");
-        System.out.println("Aktualny stan Twojej hodowli: króliki: "+ liczbakrolikow+ ", owce: "+ liczbaowiec+", świnie: "+liczbaswin+", krowy: "+liczbakrow+", konie: "+liczbakoni);
+        System.out.println("Aktualny stan Twojej hodowli: króliki: "+ liczbaKrolikow+ ", owce: "+ liczbaOwiec+", świnie: "+liczbaSwin+", krowy: "+liczbaKrow+", konie: "+liczbaKoni);
         System.out.println("By rzucić kostkami wćisnij 1");
 
-        while(liczbakrolikow<1 || liczbaowiec<1 || liczbaswin<1 || liczbakrow<1 || liczbakoni<1) {
+        while(liczbaKrolikow<1 || liczbaOwiec<1 || liczbaSwin<1 || liczbaKrow<1 || liczbaKoni<1) {
 
             Scanner input = new Scanner(System.in);
             String temp = input.nextLine();
@@ -45,67 +45,67 @@ public class Main {
                 atakWilka();
             }
             else if (temp.equals("2")) {
-                if (liczbakrolikow >= 6)
+                if (liczbaKrolikow >= 6)
                     zamianaKrolikowNaOwce();
                 else
                     System.out.println("Hola, hola, nie oszukuj, kolego.");
             }
             else if (temp.equals("3")) {
-                if (liczbaowiec >= 1)
+                if (liczbaOwiec >= 1)
                     zamianaOwcyNaKroliki();
                 else
                     System.out.println("Hola, hola, nie oszukuj, kolego.");
             }
             else if (temp.equals("4")) {
-                if (liczbaowiec >= 2)
+                if (liczbaOwiec >= 2)
                     zamianaOwiecNaSwinie();
                 else
                     System.out.println("Hola, hola, nie oszukuj, kolego.");
             }
             else if (temp.equals("5")) {
-                if (liczbaswin >= 1)
+                if (liczbaSwin >= 1)
                     zamianaSwiniNaOwce();
                 else
                     System.out.println("Hola, hola, nie oszukuj, kolego.");
             }
             else if (temp.equals("6")) {
-                if (liczbaswin >= 3)
+                if (liczbaSwin >= 3)
                     zamianaSwinNaKrowy();
                 else
                     System.out.println("Hola, hola, nie oszukuj, kolego.");
             }
             else if (temp.equals("7")) {
-                if (liczbakrow >= 1)
+                if (liczbaKrow >= 1)
                     zamianaKrowyNaSwinie();
                 else
                     System.out.println("Hola, hola, nie oszukuj, kolego.");
             }
             else if (temp.equals("8")) {
-                if (liczbakrow >= 2)
+                if (liczbaKrow >= 2)
                     zamianaKrowNaKonia();
                 else
                     System.out.println("Hola, hola, nie oszukuj, kolego.");
             }
             else if (temp.equals("9")) {
-                if (liczbakoni >= 1)
+                if (liczbaKoni >= 1)
                     zamianaKoniaNaKrowy();
                 else
                     System.out.println("Hola, hola, nie oszukuj, kolego.");
             }
             else if (temp.equals("10")) {
-                if (liczbaowiec >= 1)
+                if (liczbaOwiec >= 1)
                     zamianaOwcyNaMalegoPsa();
                 else
                     System.out.println("Hola, hola, nie oszukuj, kolego.");
             }
             else if (temp.equals("11")) {
-                if (liczbakrow >= 1)
+                if (liczbaKrow >= 1)
                     zamianaKrowyNaDuzegoPsa();
                 else
                     System.out.println("Hola, hola, nie oszukuj, kolego.");
             }
 
-            System.out.println("Aktualny stan Twojej hodowli: króliki: " + liczbakrolikow + ", owce: " + liczbaowiec + ", świnie: " + liczbaswin + ", krowy: " + liczbakrow + ", konie: " + liczbakoni+" (dodatkowo: małe psy: "+liczbamalychpsow+", duże psy: "+liczbaduzychpsow+")");
+            System.out.println("Aktualny stan Twojej hodowli: króliki: " + liczbaKrolikow + ", owce: " + liczbaOwiec + ", świnie: " + liczbaSwin + ", krowy: " + liczbaKrow + ", konie: " + liczbaKoni+" (dodatkowo: małe psy: "+liczbaMalychPsow+", duże psy: "+liczbaDuzychPsow+")");
             System.out.println("Wciśnij 1 by rzucić kostkami");
             System.out.println("Wciśnij 2 by wymienić 6 królików na 1 owcę");
             System.out.println("Wciśnij 3 by wymienić 1 owcę na 6 królików");
@@ -120,109 +120,109 @@ public class Main {
 
         }
 
-        System.out.println("Gratulacje, udało Ci się wypełnić zadanie. Potrzebowałeś do tego "+liczbarzutow+" rzutów kostkami.");
+        System.out.println("Gratulacje, udało Ci się wypełnić zadanie. Potrzebowałeś do tego "+liczbaRzutow+" rzutów kostkami.");
     }
 
     public static void rzutKostka(){
-        wynikzoltej = 1+dice.nextInt(12);
+        wynikZoltej = dice.nextInt(12);
 
-        if(wynikzoltej<=6)
+        if(wynikZoltej<=5)
             zolta = "królik";
-        else if(wynikzoltej>6&&wynikzoltej<=9)
+        else if(wynikZoltej>5&&wynikZoltej<=8)
             zolta = "owca";
-        else if(wynikzoltej==10)
+        else if(wynikZoltej==9)
             zolta = "świnia";
-        else if(wynikzoltej==11)
+        else if(wynikZoltej==10)
             zolta = "krowa";
-        else if(wynikzoltej==12)
+        else if(wynikZoltej==11)
             zolta = "wilk";
         System.out.println("Kostka żółta: "+ zolta);
 
-        wynikczerwonej = 1+dice.nextInt(12);
+        wynikCzerwonej = dice.nextInt(12);
 
-        if(wynikczerwonej<=6)
+        if(wynikCzerwonej<=5)
             czerwona = "królik";
-        else if(wynikczerwonej==7||wynikczerwonej==8)
+        else if(wynikCzerwonej==6||wynikCzerwonej==7)
             czerwona = "owca";
-        else if(wynikczerwonej==9||wynikczerwonej==10)
+        else if(wynikCzerwonej==8||wynikCzerwonej==9)
             czerwona = "świnia";
-        else if(wynikczerwonej==11)
+        else if(wynikCzerwonej==10)
             czerwona = "koń";
-        else if(wynikczerwonej==12)
+        else if(wynikCzerwonej==11)
             czerwona = "lis";
         System.out.println("Kostka czerwona: "+czerwona);
-        liczbarzutow++;
+        liczbaRzutow++;
     }
 
     public static void nagrodaZaRzut(){
-        int roboczykrolik = 0;
-        int roboczaowca = 0;
-        int roboczaswinia = 0;
-        int roboczakrowa = 0;
-        int roboczykon = 0;
+        int roboczyKrolik = 0;
+        int roboczaOwca = 0;
+        int roboczaSwinia = 0;
+        int roboczaKrowa = 0;
+        int roboczyKon = 0;
 
         if(czerwona.equals("królik")){
-            roboczykrolik +=1;
+            roboczyKrolik +=1;
         }
         else if(czerwona.equals("owca")){
-            roboczaowca +=1;
+            roboczaOwca +=1;
         }
         else if(czerwona.equals("świnia")){
-            roboczaswinia +=1;
+            roboczaSwinia +=1;
         }
         else if(czerwona.equals("koń")){
-            roboczykon +=1;
+            roboczyKon +=1;
         }
 
         if(zolta.equals("królik")){
-            roboczykrolik +=1;
+            roboczyKrolik +=1;
         }
         else if(zolta.equals("owca")){
-            roboczaowca +=1;
+            roboczaOwca +=1;
         }
         else if(zolta.equals("świnia")){
-            roboczaswinia +=1;
+            roboczaSwinia +=1;
         }
         else if(zolta.equals("krowa")){
-            roboczakrowa +=1;
+            roboczaKrowa +=1;
         }
 
-        if(roboczykrolik>0)
-            nagrodakrolik = (roboczykrolik + liczbakrolikow)/2;
+        if(roboczyKrolik>0)
+            nagrodaKrolik = (roboczyKrolik + liczbaKrolikow)/2;
         else
-            nagrodakrolik = 0;
-        if(roboczaowca>0)
-            nagrodaowca = (roboczaowca + liczbaowiec)/2;
+            nagrodaKrolik = 0;
+        if(roboczaOwca>0)
+            nagrodaOwca = (roboczaOwca + liczbaOwiec)/2;
         else
-            nagrodaowca = 0;
-        if(roboczaswinia>0)
-            nagrodaswinia = (roboczaswinia + liczbaswin)/2;
+            nagrodaOwca = 0;
+        if(roboczaSwinia>0)
+            nagrodaSwinia = (roboczaSwinia + liczbaSwin)/2;
         else
-            nagrodaswinia = 0;
-        if(roboczakrowa>0)
-            nagrodakrowa = (roboczakrowa + liczbakrow)/2;
+            nagrodaSwinia = 0;
+        if(roboczaKrowa>0)
+            nagrodaKrowa = (roboczaKrowa + liczbaKrow)/2;
         else
-            nagrodakrowa = 0;
-        if(roboczykon>0)
-            nagrodakon = (roboczykon + liczbakoni)/2;
+            nagrodaKrowa = 0;
+        if(roboczyKon>0)
+            nagrodaKon = (roboczyKon + liczbaKoni)/2;
         else
-            nagrodakon = 0;
+            nagrodaKon = 0;
 
-        liczbakrolikow += nagrodakrolik;
-        liczbaowiec += nagrodaowca;
-        liczbaswin += nagrodaswinia;
-        liczbakrow += nagrodakrowa;
-        liczbakoni += nagrodakon;
+        liczbaKrolikow += nagrodaKrolik;
+        liczbaOwiec += nagrodaOwca;
+        liczbaSwin += nagrodaSwinia;
+        liczbaKrow += nagrodaKrowa;
+        liczbaKoni += nagrodaKon;
     }
 
     public static void atakLisa(){
         if(czerwona.equals("lis")){
-            if(liczbamalychpsow<1){
-                System.out.println("Sprytny lis zakradł się do zagrody i zjadł Twoje króliki w ilości: "+liczbakrolikow+", innymi słowy - wszystkie");
-                liczbakrolikow = 0;
+            if(liczbaMalychPsow<1){
+                System.out.println("Sprytny lis zakradł się do zagrody i zjadł Twoje króliki w ilości: "+liczbaKrolikow+", innymi słowy - wszystkie");
+                liczbaKrolikow = 0;
             }
             else {
-                liczbamalychpsow -= 1;
+                liczbaMalychPsow -= 1;
                 System.out.println("Dzięki bohaterskiej postawie małego psa, udało się obronić Twoje króliki, co jednak przypłacił życiem");
             }
         }
@@ -230,68 +230,68 @@ public class Main {
 
     public static void atakWilka(){
         if(zolta.equals("wilk")){
-            if(liczbaduzychpsow<1){
-                System.out.println("Zły wilk zakradł się do zagrody i zjadł wszystkie Twoje zwierzęta, tzn króliki: " + liczbakrolikow + ", owce: " + liczbaowiec + ", świnie: " + liczbaswin + ", krowy: " + liczbakrow + ", konie: " + liczbakoni);
-                liczbakrolikow = 0;
-                liczbaowiec = 0;
-                liczbaswin = 0;
-                liczbakrow = 0;
+            if(liczbaDuzychPsow<1){
+                System.out.println("Zły wilk zakradł się do zagrody i zjadł wszystkie Twoje zwierzęta, tzn króliki: " + liczbaKrolikow + ", owce: " + liczbaOwiec + ", świnie: " + liczbaSwin + ", krowy: " + liczbaKrow);
+                liczbaKrolikow = 0;
+                liczbaOwiec = 0;
+                liczbaSwin = 0;
+                liczbaKrow = 0;
             }
             else {
-                liczbaduzychpsow -= 1;
+                liczbaDuzychPsow -= 1;
                 System.out.println("Dzięki bohaterskiej postawie dużego psa, udało się obronić Twoje zwierzęta, co jednak przypłacił życiem");
             }
         }
     }
 
     public static void zamianaKrolikowNaOwce(){
-        liczbakrolikow -=6;
-        liczbaowiec +=1;
+        liczbaKrolikow -=6;
+        liczbaOwiec +=1;
         System.out.println("Wymieniłeś 6 królików na 1 owcę");
     }
     public static void zamianaOwcyNaKroliki(){
-        liczbakrolikow +=6;
-        liczbaowiec -=1;
+        liczbaKrolikow +=6;
+        liczbaOwiec -=1;
         System.out.println("Wymieniłeś 1 owcę na 6 królików");
     }
     public static void zamianaOwiecNaSwinie(){
-        liczbaswin +=1;
-        liczbaowiec -=2;
+        liczbaSwin +=1;
+        liczbaOwiec -=2;
         System.out.println("Wymieniłeś 2 owce na 1 świnię");
     }
     public static void zamianaSwiniNaOwce(){
-        liczbaswin -=1;
-        liczbaowiec +=2;
+        liczbaSwin -=1;
+        liczbaOwiec +=2;
         System.out.println("Wymieniłeś 1 świnię na 2 owce");
     }
     public static void zamianaOwcyNaMalegoPsa(){
-        liczbamalychpsow +=1;
-        liczbaowiec -=1;
+        liczbaMalychPsow +=1;
+        liczbaOwiec -=1;
         System.out.println("Wymieniłeś 1 owcę na 1 małego psa");
     }
     public static void zamianaSwinNaKrowy(){
-        liczbakrow +=1;
-        liczbaswin -=3;
+        liczbaKrow +=1;
+        liczbaSwin -=3;
         System.out.println("Wymieniłeś 3 świnie na 1 krowę");
     }
     public static void zamianaKrowyNaSwinie(){
-        liczbakrow -=1;
-        liczbaswin +=3;
+        liczbaKrow -=1;
+        liczbaSwin +=3;
         System.out.println("Wymieniłeś 1 krowę na 6 świń");
     }
     public static void zamianaKrowyNaDuzegoPsa(){
-        liczbakrow -=1;
-        liczbaduzychpsow +=1;
+        liczbaKrow -=1;
+        liczbaDuzychPsow +=1;
         System.out.println("Wymieniłeś 1 krowę na 1 dużego psa");
     }
     public static void zamianaKrowNaKonia(){
-        liczbakrow -=2;
-        liczbakoni +=1;
+        liczbaKrow -=2;
+        liczbaKoni +=1;
         System.out.println("Wymieniłeś 2 krowy na 1 konia");
     }
     public static void zamianaKoniaNaKrowy(){
-        liczbakrow +=2;
-        liczbakoni -=1;
+        liczbaKrow +=2;
+        liczbaKoni -=1;
         System.out.println("Wymieniłeś 1 konia na 2 krowy");
     }
 }
